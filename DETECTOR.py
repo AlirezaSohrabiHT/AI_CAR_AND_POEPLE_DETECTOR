@@ -11,12 +11,12 @@ while True:
       break
 
  cars = car_tracker.detectMultiScale(grayscaled_frame)
- print(cars)
- cv2.imshow('DETECTOR',grayscaled_frame)
+ for(x,y,w,h) in cars:
+  cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
+ cv2.imshow('DETECTOR',frame)
  cv2.waitKey(1)
 
 #img = cv2.imread(img_file)
 #black_n_white = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY) 
-#for(x,y,w,h) in cars:
-#cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+
 #print (cars)
